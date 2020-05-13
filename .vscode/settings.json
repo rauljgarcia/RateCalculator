@@ -1,0 +1,31 @@
+{
+    "git.enabled": false,
+    "git.path": null,
+    "git.autofetch": false,
+    "files.associations": {
+        "iosfwd": "cpp",
+        "__hash_table": "cpp",
+        "__split_buffer": "cpp",
+        "__tree": "cpp",
+        "atomic": "cpp",
+        "deque": "cpp",
+        "filesystem": "cpp",
+        "forward_list": "cpp",
+        "ios": "cpp",
+        "list": "cpp",
+        "map": "cpp",
+        "set": "cpp",
+        "string": "cpp",
+        "system_error": "cpp",
+        "unordered_map": "cpp",
+        "unordered_set": "cpp",
+        "vector": "cpp",
+        "memory": "cpp",
+        "__functional_base": "cpp",
+        "istream": "cpp",
+        "locale": "cpp",
+        "tuple": "cpp",
+        "utility": "cpp",
+        "ostream": "cpp"
+    }
+}
