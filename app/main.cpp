@@ -6,8 +6,10 @@
 using namespace std;
 
 int main(){
+RateCalc myCalc;
 
 int choice;
+
 
 do {
     for (int i=0; i<20; i++){
@@ -15,8 +17,8 @@ do {
     }
     cout<<UNDERLINE<<"Co-Funder Cost Sharing Calculator"<<CLOSEUNDERLINE<<endl;
     cout<<"\n";
-    cout<<"0. To quit."<<endl;
-    cout<<"1. To start."<<endl;
+    cout<<"0. Quit."<<endl;
+    cout<<"1. Calculate one-funder shoot."<<endl;
 
     cin>>choice;
 
@@ -27,9 +29,11 @@ do {
         return  0;
 
     case 1:
-        cout<<"let's go"<<endl;
-        break;
+        myCalc.BaseRate();
+        return 0;
     }
 }
 while(choice != 0);
+
+return 0;
 }

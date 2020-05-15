@@ -26,6 +26,7 @@
         "locale": "cpp",
         "tuple": "cpp",
         "utility": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "streambuf": "cpp"
     }
 }
