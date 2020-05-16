@@ -9,8 +9,7 @@ int main(){
 RateCalc myCalc;
 
 int choice;
-float total1, total2, total3;
-
+double phFee, postFee, total;
 
 do {
     for (int i=0; i<20; i++){
@@ -32,23 +31,25 @@ do {
         return  0;
 
     case 1:
-        cout<<"Calculating base rate."<<endl;
-        total1 = myCalc.BaseRate();
-        cout<<"Base rate is: $"<<total1<<endl;
+        cout<<UNDERLINE<<"Calculating Base Rate:"<<CLOSEUNDERLINE<<endl;
+        cout<<"How many parties are equally cost-sharing the shoot?"<<endl;
+        int parties;
+        cin>>parties;
+        phFee = myCalc.BaseRate(parties);
+        cout<<"Base rate is: $"<<phFee<<endl;
         return 0;
 
     case 2:
-        cout<<"Calculating post-production costs."<<endl;
-        total2 = myCalc.PoProdFee();
-        cout<<"Post-production costs are: $"<<total2<<endl;
+        cout<<UNDERLINE<<"Calculating Post-Production Costs:"<<CLOSEUNDERLINE<<endl;
+        postFee = myCalc.PoProdFee();
+        cout<<"Post-production costs are: $"<<postFee<<endl;
         return 0;
 
     case 3:
-        cout<<"Calculating total shoot costs."<<endl;
-        total3 = myCalc.TotalCost1();
-        cout<<"Total shoot costs (with no cost-sharing partners) are: $"<<total3<<endl;
+        cout<<UNDERLINE<<"Calculating Total Shoot Costs:"<<CLOSEUNDERLINE<<endl;
+        total = myCalc.TotalCost();
         return 0;
-    
+
     default:
         cout<<"Please enter choice or 0 to quit"<<endl;
         break;

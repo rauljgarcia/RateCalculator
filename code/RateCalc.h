@@ -13,13 +13,14 @@ class RateCalc {
     ~RateCalc();
 
     //calculate baserate single funder, no post-prod fees
-    int BaseRate();
+    int BaseRate(int parties);
     
     //calculate post-production fee
     int PoProdFee();
 
-    //calculate total shoot costs, not cost shared
-    int TotalCost1();
+    //calculate total shoot costs, not cost-shared
+    int TotalCost();
+
 };
 
 #endif // RATECALC

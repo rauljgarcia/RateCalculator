@@ -5,5 +5,5 @@ photo shoot.
 
 Will include options for both equal and unequal splits.
 
-Will implement in c++ to determine necessary logic/architecture, then transition
-to a front end framework still TBD.
+Implemented in C++ to determine necessary logic/architecture, then to transition
+to a frontend framework still TBD.
