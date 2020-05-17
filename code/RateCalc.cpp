@@ -83,15 +83,30 @@ int RateCalc::PoProdFee(){
 }
 
 int RateCalc::TotalCost(){
-    int parties;
-    double p1, p2, total;
+    int parties, party, totalImageCt;
+    double p1, p2, total, propTotal;
 
     cout<<"\nEnter number of parties receiving all images"<<endl;
     cin>>parties;
+    if(parties>1){
+    cout<<"Are all parties receiving the same set of images?\nEnter y/n:"<<endl;
+    if("y"){
+        break;
+    } else {
+        party = 0;
+        totalImageCt = 0;
+        for(int i=1; i<parties+1; i++){
+            cout<<"how many images will party "<<i<<" receive?"<<endl;
+            cin>>++party;
+        } 
+        
+    }
+    }
 
     p1 = BaseRate(parties);
     p2 = PoProdFee();
     total = (p1 + p2)/parties;
+    propTotal;
     
     if(parties == 1){
         cout<<"Total shoot cost (with no cost-sharing partners) is: $"<<total<<endl;

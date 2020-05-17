@@ -21,6 +21,7 @@ do {
     cout<<"1. Calculate base rate for one-funder shoot."<<endl;
     cout<<"2. Calculate post-production costs."<<endl;
     cout<<"3. Calculate total shoot costs."<<endl;
+    cout<<"4. Calculate total shoot costs - Multi-funder unequal split."<<endl;
 
     cin>>choice;
 
@@ -47,6 +48,11 @@ do {
 
     case 3:
         cout<<UNDERLINE<<"Calculating Total Shoot Costs:"<<CLOSEUNDERLINE<<endl;
+        total = myCalc.TotalCost();
+        return 0;
+
+    case 4:
+        cout<<UNDERLINE<<"Calculating Total Shoot Costs - Multi-funded:"<<CLOSEUNDERLINE<<endl;
         total = myCalc.TotalCost();
         return 0;
 
