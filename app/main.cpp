@@ -20,8 +20,8 @@ do {
     cout<<"0. Quit."<<endl;
     cout<<"1. Calculate base rate for one-funder shoot."<<endl;
     cout<<"2. Calculate post-production costs."<<endl;
-    cout<<"3. Calculate total shoot costs."<<endl;
-    cout<<"4. Calculate total shoot costs - Multi-funder unequal split."<<endl;
+    cout<<"3. Calculate total shoot costs - 1+ cost-sharing partners, equal split."<<endl;
+    cout<<"4. Calculate total shoot costs - 2+ cost-sharing partners, unequal split."<<endl;
 
     cin>>choice;
 
@@ -52,8 +52,8 @@ do {
         return 0;
 
     case 4:
-        cout<<UNDERLINE<<"Calculating Total Shoot Costs - Multi-funded:"<<CLOSEUNDERLINE<<endl;
-        total = myCalc.TotalCost();
+        cout<<UNDERLINE<<"Calculating Total Shoot Costs:"<<CLOSEUNDERLINE<<endl;
+        total = myCalc.TotalCost2();
         return 0;
 
     default:

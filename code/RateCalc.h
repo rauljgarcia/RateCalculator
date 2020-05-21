@@ -2,6 +2,10 @@
 #define RATECALC_H__
 
 #include <memory>
+#include <map>
+#include <string>
+#include <sstream>
+
 using namespace std;
 
 class RateCalc {
@@ -14,12 +18,18 @@ class RateCalc {
 
     //calculate baserate single funder, no post-prod fees
     int BaseRate(int parties);
+
+    //calculate baserate single funder, no post-prod fees
+    int BaseRate2(int parties);
     
     //calculate post-production fee
     int PoProdFee();
 
-    //calculate total shoot costs, not cost-shared
+    //calculate total shoot costs, equal split
     int TotalCost();
+
+    //calculate total shoot costs, non-equal split
+    int TotalCost2();
 
 };
 
