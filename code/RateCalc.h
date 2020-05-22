@@ -5,6 +5,7 @@
 #include <map>
 #include <string>
 #include <sstream>
+#include "Node.h"
 
 using namespace std;
 
