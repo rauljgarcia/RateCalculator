@@ -1,5 +1,6 @@
 #include <iostream>
 #include "RateCalc.h" 
+#include "Node.h"
 
 using namespace std;
 
@@ -7,6 +8,12 @@ RateCalc::RateCalc(){
 }
 
 RateCalc::~RateCalc(){
+}
+
+shared_ptr<node> RateCalc::InitNode(string client, int shots){
+    shared_ptr<node> ret(new node);
+    ret->client = client;
+    ret->shots = shots;
 }
 
 int RateCalc::BaseRate(int parties){
@@ -174,8 +181,8 @@ int RateCalc::TotalCost2(){
         cin>>nameParty;
         cout<<"How many images will "<<nameParty<<" receive?"<<endl;
         cin>>indivImageCt;
-        mymap.insert(pair<string,int>(nameParty, indivImageCt));
         totalImageCt += indivImageCt;
+        shared_ptr<node>client = InitNode(nameParty, indivImageCt);
     } 
 
     r1 = BaseRate(parties);

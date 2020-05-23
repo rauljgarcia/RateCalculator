@@ -17,6 +17,8 @@ class RateCalc {
 
     ~RateCalc();
 
+    shared_ptr<node> InitNode(string client, int shots);
+
     //calculate baserate single funder, no post-prod fees
     int BaseRate(int parties);
 
