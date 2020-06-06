@@ -7,15 +7,13 @@ using namespace std;
 
 int main(){
 RateCalc myCalc;
-
+bool quit = false;
 int choice;
 double phFee, postFee, total;
 
-do {
-    for (int i=0; i<20; i++){
-        cout<<"\n";
-    }
-    cout<<UNDERLINE<<"Co-Funder Cost Sharing Calculator"<<CLOSEUNDERLINE<<endl;
+while (!quit){
+
+    cout<<UNDERLINE<<"Please choose from options below"<<CLOSEUNDERLINE<<endl;
     cout<<"\n";
     cout<<"0. Quit."<<endl;
     cout<<"1. Calculate base rate for one-funder shoot."<<endl;
@@ -27,9 +25,9 @@ do {
 
     switch (choice)
     {
-    case 0:
+    case 0: quit = true;
         cout<<"Ending."<<endl;
-        return  0;
+        break;
 
     case 1:
         cout<<UNDERLINE<<"Calculating Base Rate:"<<CLOSEUNDERLINE<<endl;
@@ -38,30 +36,27 @@ do {
         cin>>parties;
         phFee = myCalc.BaseRate(parties);
         cout<<"Base rate is: $"<<phFee<<endl;
-        return 0;
+        break;
 
     case 2:
         cout<<UNDERLINE<<"Calculating Post-Production Costs:"<<CLOSEUNDERLINE<<endl;
         postFee = myCalc.PoProdFee();
         cout<<"Post-production costs are: $"<<postFee<<endl;
-        return 0;
+        break;
 
     case 3:
         cout<<UNDERLINE<<"Calculating Total Shoot Costs:"<<CLOSEUNDERLINE<<endl;
         total = myCalc.TotalCost();
-        return 0;
+        break;
 
     case 4:
         cout<<UNDERLINE<<"Calculating Total Shoot Costs:"<<CLOSEUNDERLINE<<endl;
         total = myCalc.TotalCost2();
-        return 0;
+        break;
 
     default:
         cout<<"Please enter choice or 0 to quit"<<endl;
         break;
     }
-}
-while(choice != 0);
-
-return 0;
+    }
 }

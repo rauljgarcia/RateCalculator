@@ -7,11 +7,15 @@ ClientInf::ClientInf(){
 ClientInf::~ClientInf(){
 }
 
+
 shared_ptr<node> ClientInf::InitNode(string client, int shots){
     shared_ptr<node> ret(new node);
     ret->client = client;
     ret->shots = shots;
 }
+
+
+
 
 void ClientInf::AppendData(string client, int shots){
 

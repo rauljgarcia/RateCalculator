@@ -37,7 +37,6 @@ int RateCalc::BaseRate(int parties){
         cout<<"\nEnter Photo Fee for full-day:"<<endl;
         cin>>photoFeeFull;
         totalPhFeeFull = fullDays * (photoFeeFull + (photoFeeFull * markup));
-        cout<<totalPhFeeFull;
 
         cout<<"\nEnter the Assistant Fee per full day:"<<endl;
         cin>>asstFeeFull;
@@ -68,9 +67,6 @@ int RateCalc::BaseRate(int parties){
     cin>>travelCosts;
     
     baseRate = (totalPhFeeFull + totalAsstFull + totalPhFeeHalf + totalAsstHalf + travelCosts);
-    cout<<baseRate<<endl;
-
-    cout<<endl;
     return baseRate;
 }
 
@@ -158,34 +154,35 @@ int RateCalc::TotalCost(){
     
     if(parties == 1){
         cout<<"Total shoot cost (with no cost-sharing partners) is: $"<<total<<endl;
+        cout<<endl;
     } else {
-        cout<<"Total shoot cost ("<<parties<<" + parties sharing all images) is: $"<<total<<" /per party"<<endl;
+        cout<<"Total shoot cost (with "<<parties<<" parties sharing all images) is: $"<<total<<" /per party"<<endl;
+        cout<<endl;
     }
     return total;
 }
 
 int RateCalc::TotalCost2(){
-    int parties, indivImageCt, totalImageCt;
+    int numParties, indivImageCt, totalImageCt;
     double r1, r2, perImgTotal;
     string nameParty;
 
-    map<string,int> mymap;
-
     cout<<"\nEnter number of parties cost-sharing the shoot"<<endl;
-    cin>>parties;
+    cin>>numParties;
+    cout<<"\nEnter names of parties"<<endl;
+    getline(cin, nameParty);
 
     indivImageCt = 0;
     totalImageCt = 0;
-    for(int i=1; i<parties+1; i++){
+    for(int i=1; i<numParties+1; i++){
         cout<<"Name of party: "<<i<<endl;
         cin>>nameParty;
         cout<<"How many images will "<<nameParty<<" receive?"<<endl;
         cin>>indivImageCt;
         totalImageCt += indivImageCt;
-        shared_ptr<node>client = InitNode(nameParty, indivImageCt);
     } 
 
-    r1 = BaseRate(parties);
+    r1 = BaseRate(numParties);
     r2 = PoProdFee();
     cout<<"BaseRate: "<<r1<<endl;
     cout<<"PostProd: "<<r2<<endl;

@@ -21,6 +21,8 @@ ClientInf();
 
 shared_ptr<node> InitNode(string client, int shots);
 
+void addClient();
+
 void AppendData(string client, int shots);
 
 void Append(shared_ptr<node> new_node);
